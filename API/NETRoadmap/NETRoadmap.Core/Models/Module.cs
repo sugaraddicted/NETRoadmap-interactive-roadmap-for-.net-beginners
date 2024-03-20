@@ -1,7 +1,7 @@
 ﻿
 namespace NETRoadmap.Core.Models
 {
-    public class Module
+    public class Module : IEntityBase
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

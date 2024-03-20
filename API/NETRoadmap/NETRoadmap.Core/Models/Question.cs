@@ -1,7 +1,7 @@
 ﻿
 namespace NETRoadmap.Core.Models
 {
-    public class Question
+    public class Question : IEntityBase
     {
         public Guid Id { get; set; }
         public string QuestionText { get; set; }

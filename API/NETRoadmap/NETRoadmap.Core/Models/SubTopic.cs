@@ -1,7 +1,7 @@
 ﻿
 namespace NETRoadmap.Core.Models
 {
-    public class SubTopic
+    public class SubTopic : IEntityBase
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
