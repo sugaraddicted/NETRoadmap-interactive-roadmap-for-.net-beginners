@@ -24,6 +24,9 @@ namespace NETRoadmap.Infrastructure.Configurations
                 .HasForeignKey(c => c.TopicId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.HasOne(p => p.Test)
+                .WithOne(t => t.Topic);
+
             builder.HasMany(p => p.Resources)
                 .WithOne(c => c.Topic)
                 .HasForeignKey(c => c.TopicId)

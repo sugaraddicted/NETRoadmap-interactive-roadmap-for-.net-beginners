@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NETRoadmap.Core.Models;
 using System.Linq.Expressions;
 using NETRoadmap.Infrastructure.Persistence;
+using NETRoadmap.Infrastructure.Services.Interfaces;
 
 namespace NETRoadmap.Infrastructure.Services
 {

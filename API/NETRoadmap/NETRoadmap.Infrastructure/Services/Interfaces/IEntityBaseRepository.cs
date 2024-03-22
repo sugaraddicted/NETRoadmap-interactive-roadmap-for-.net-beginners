@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using NETRoadmap.Core.Models;
 
-namespace NETRoadmap.Infrastructure.Services
+namespace NETRoadmap.Infrastructure.Services.Interfaces
 {
     public interface IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {

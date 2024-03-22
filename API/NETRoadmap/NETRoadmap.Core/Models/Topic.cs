@@ -10,5 +10,6 @@ namespace NETRoadmap.Core.Models
         public List<Resource> Resources { get; set; }
         public Guid ModuleId { get; set; }
         public Module Module { get; set; }
+        public Test Test { get; set; }
     }
 }
