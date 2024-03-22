@@ -5,7 +5,7 @@ using NETRoadmap.Infrastructure.Services.Interfaces;
 
 namespace NETRoadmap.Infrastructure.Services
 {
-    internal class SubResourceService : EntityBaseRepository<SubResource>, ISubResourceService
+    public class SubResourceService : EntityBaseRepository<SubResource>, ISubResourceService
     {
         private readonly AppDbContext _context;
         public SubResourceService(AppDbContext context) : base(context)
