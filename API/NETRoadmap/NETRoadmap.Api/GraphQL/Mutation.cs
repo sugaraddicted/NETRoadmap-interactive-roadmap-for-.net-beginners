@@ -18,5 +18,32 @@ namespace NETRoadmap.Api.GraphQL
             await moduleService.AddAsync(module);
             return module;
         }
+
+        public async Task<Topic> AddTopic(AddTopicInput input, [Service] ITopicService topicService)
+        {
+            var topic = new Topic()
+            {
+                Name = input.Name,
+                Description = input.Description,
+                ModuleId = input.ModuleId
+            };
+
+            await topicService.AddAsync(topic);
+            return topic;
+        }
+
+        public async Task<Resource> AddResource(AddResourceInput input, [Service] IResourceService resourceService)
+        {
+            var resource = new Resource()
+            {
+                Name = input.Name,
+                Description = input.Description,
+                URL = input.URL,
+                TopicId = input.TopicId,
+            };
+
+            await resourceService.AddAsync(resource);
+            return resource;
+        }
     }
 }

@@ -9,5 +9,13 @@ namespace NETRoadmap.Api.GraphQL
         {
             return await moduleService.GetByIdAsync(moduleId);
         }
+        public async Task<Topic> GetTopicById(Guid topicId, [Service] ITopicService topicService)
+        {
+            return await topicService.GetByIdAsync(topicId);
+        }
+        public async Task<Resource> GetResourceById(Guid resourceId, [Service] IResourceService resourceService)
+        {
+            return await resourceService.GetByIdAsync(resourceId);
+        }
     }
 }
