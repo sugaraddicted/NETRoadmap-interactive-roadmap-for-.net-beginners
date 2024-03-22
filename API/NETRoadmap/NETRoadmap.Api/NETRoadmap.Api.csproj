@@ -25,4 +25,8 @@
     <ProjectReference Include="..\NETRoadmap.Infrastructure\NETRoadmap.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GraphQL\Payload\" />
+  </ItemGroup>
+
 </Project>
