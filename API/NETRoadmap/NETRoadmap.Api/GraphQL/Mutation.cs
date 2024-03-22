@@ -45,5 +45,40 @@ namespace NETRoadmap.Api.GraphQL
             await resourceService.AddAsync(resource);
             return resource;
         }
+
+        public async Task<Test> AddTest(AddTestInput input, [Service] ITestService testService)
+        {
+            var test = new Test()
+            {
+                Name = input.Name,
+                Description = input.Description,
+                TopicId = input.TopicId,
+            };
+
+            await testService.AddAsync(test);
+            return test;
+        }
+        public async Task<Question> AddQuestion(AddQuestionInput input, [Service] IQuestionService questionService, [Service] IAnswerService answerService)
+        {
+            var question = new Question()
+            {
+                QuestionText = input.QuestionText,
+                TestId = input.TestId
+            };
+            await questionService.AddAsync(question);
+
+            foreach (var answerInput in input.Variants)
+            {
+                var answer = new Answer()
+                {
+                    AnswerText = answerInput.AnswerText,
+                    IsCorrect = answerInput.IsCorrect,
+                    QuestionId = question.Id
+                };
+                await answerService.AddAsync(answer);
+            }
+
+            return question;
+        }
     }
 }

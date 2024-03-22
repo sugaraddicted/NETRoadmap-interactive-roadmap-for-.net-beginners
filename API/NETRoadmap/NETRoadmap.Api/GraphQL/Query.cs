@@ -17,5 +17,9 @@ namespace NETRoadmap.Api.GraphQL
         {
             return await resourceService.GetByIdAsync(resourceId);
         }
+        public async Task<Test> GetTestById(Guid testId, [Service] ITestService testService)
+        {
+            return await testService.GetByIdAsync(testId);
+        }
     }
 }
