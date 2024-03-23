@@ -58,6 +58,7 @@ namespace NETRoadmap.Api.GraphQL
             await testService.AddAsync(test);
             return test;
         }
+
         public async Task<Question> AddQuestion(AddQuestionInput input, [Service] IQuestionService questionService, [Service] IAnswerService answerService)
         {
             var question = new Question()
@@ -79,6 +80,32 @@ namespace NETRoadmap.Api.GraphQL
             }
 
             return question;
+        }
+        public async Task<SubTopic> AddSubTopic(AddSubTopicInput input, [Service] ISubTopicService subTopicService)
+        {
+            var subTopic = new SubTopic()
+            {
+                Name = input.Name,
+                Description = input.Description,
+                TopicId = input.TopicId
+            };
+
+            await subTopicService.AddAsync(subTopic);
+            return subTopic;
+        }
+
+        public async Task<SubResource> AddSubResource(AddSubResourceInput input, [Service] ISubResourceService subResourceService)
+        {
+            var subResource = new SubResource()
+            {
+                Name = input.Name,
+                Description = input.Description,
+                URL = input.URL,
+                SubTopicId = input.SubTopicId,
+            };
+
+            await subResourceService.AddAsync(subResource);
+            return subResource;
         }
     }
 }
