@@ -23,6 +23,10 @@ namespace NETRoadmap.Infrastructure.Configurations
                 .WithOne(c => c.Module)
                 .HasForeignKey(c => c.ModuleId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(p => p.Roadmap)
+                .WithMany(c => c.Modules)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
